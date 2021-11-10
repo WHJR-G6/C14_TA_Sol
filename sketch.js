@@ -41,13 +41,13 @@ function draw() {
   textSize(16);
   text("Press Space to make jack jump",130,100);
   text("Press right and left arrow to make jack go right and left",50,80);
+  
+  }
   if(keyDown("up"))
   {
-    player.velocityY=-10;
+    player.velocityY=-16;
     gameState =PLAY;
   }
-  }
-  
 
   if(keyDown("left"))
   {
