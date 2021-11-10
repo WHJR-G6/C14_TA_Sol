@@ -3,20 +3,21 @@ var platform,platform2;
 var jack_image, platform_image;
 var platform1,platform2,platform3,platform4,platform5,platform6;
 
+const PLAY = 1;
+const END = 0;
+const START = 2
+var gameState = START;
+
 function preload(){
-  jack_image=loadImage("images/jack2.png")
-  
- 
-platform1 = loadImage("images/platform1.png")
-platform2 = loadImage("images/platform2.png")
-platform3 = loadImage("images/platform3.png")
-platform4 = loadImage("images/platform4.png")
-platform5 = loadImage("images/platform5.png")
-platform6 = loadImage("images/platform6.png")
+  jack_image=loadImage("images/jack2.png");
+platform1 = loadImage("images/platform1.png");
+platform2 = loadImage("images/platform2.png");
+platform3 = loadImage("images/platform3.png");
+platform4 = loadImage("images/platform4.png");
+platform5 = loadImage("images/platform5.png");
+platform6 = loadImage("images/platform6.png");
 bg = loadImage('images/bg.png');
-
 }
-
 
 function setup() {
   createCanvas(500, 500);
@@ -34,12 +35,19 @@ function setup() {
 
 function draw() {
   background(bg);
-
- 
+  if(gameState==START)
+  {
+  fill(255);
+  textSize(16);
+  text("Press Space to make jack jump",130,100);
+  text("Press right and left arrow to make jack go right and left",50,80);
   if(keyDown("up"))
   {
-    player.velocityY=-10
+    player.velocityY=-10;
+    gameState =PLAY;
   }
+  }
+  
 
   if(keyDown("left"))
   {
