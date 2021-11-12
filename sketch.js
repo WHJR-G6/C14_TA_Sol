@@ -37,6 +37,7 @@ function draw() {
   background(bg);
   if(gameState==START)
   {
+  spawnPlatform();
   fill(255);
   textSize(16);
   text("Press Space to make jack jump",130,100);
@@ -67,7 +68,6 @@ function draw() {
   player.collide(platformGroups);
   
   
-  spawnPlatform();
 
   drawSprites();
   
